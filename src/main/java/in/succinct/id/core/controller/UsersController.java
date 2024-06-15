@@ -48,7 +48,7 @@ public class UsersController extends com.venky.swf.plugins.collab.controller.Use
         }
 
 
-        addToIncludedModelFieldsMap(map, SubmittedDocument.class,Arrays.asList("ID","FILE","COMPANY_ID","USER_ID"));
+        addToIncludedModelFieldsMap(map, SubmittedDocument.class,Arrays.asList("ID","FILE","COMPANY_ID","USER_ID" , "DOCUMENTED_MODEL_ID" ));
         addToIncludedModelFieldsMap(map, Document.class,Collections.singletonList("ID"));
         addToIncludedModelFieldsMap(map, CompanyNetworkDomain.class,Arrays.asList("ID","COMPANY_ID"));
         addToIncludedModelFieldsMap(map, NetworkDomain.class,Collections.singletonList("ID"));
