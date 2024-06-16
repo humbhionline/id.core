@@ -14,11 +14,7 @@ public class CompanyExtension extends ModelOperationExtension<Company> {
     @Override
     protected void beforeValidate(Company company) {
         if (ObjectUtil.isVoid(company.getSubscriberId())){
-            if (!ObjectUtil.isVoid(company.getDomainName())) {
-                company.setSubscriberId(company.getDomainName());
-            }else {
-                company.setSubscriberId(UUID.randomUUID().toString());
-            }
+            company.setSubscriberId(UUID.randomUUID().toString());
         }
     }
 
