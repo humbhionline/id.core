@@ -1,7 +1,10 @@
 package in.succinct.id.core.db.model.onboarding.company;
 
 import com.venky.core.util.ObjectUtil;
+import com.venky.swf.db.annotations.column.COLUMN_DEF;
 import com.venky.swf.db.annotations.column.UNIQUE_KEY;
+import com.venky.swf.db.annotations.column.defaulting.StandardDefault;
+import com.venky.swf.db.annotations.column.validations.Enumeration;
 import com.venky.swf.db.annotations.model.CONFIGURATION;
 import com.venky.swf.db.annotations.model.HAS_DESCRIPTION_FIELD;
 import com.venky.swf.db.annotations.model.MENU;
@@ -25,6 +28,10 @@ public interface NetworkDomain extends Model {
     @UNIQUE_KEY("CODE")
     public String getCode();
     public void setCode(String code);
+
+    @Enumeration(" ,BUY_MOVABLE_GOODS,RENT_MOVABLE_GOODS,BUY_IMMOVABLE_GOODS,RENT_IMMOVABLE_GOODS,HIRE_MOVABLE_SERVICE,HIRE_IMMOVABLE_SERVICE, BUY_TRANSPORT_VEHICLE,HIRE_TRANSPORT_VEHICLE,HIRE_TRANSPORT_SERVICE")
+    public String getDomainCategory();
+    public void setDomainCategory(String domainCategory);
 
     public String getDescription();
     public void setDescription(String description);
